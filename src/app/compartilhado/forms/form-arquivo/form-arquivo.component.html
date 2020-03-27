@@ -1,0 +1,108 @@
+<div class="content">
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Arquivo:
+        </mat-panel-title>
+        <mat-panel-description>
+          Informações básicas sobre o arquivo:
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+
+      <mat-form-field appearance="standard" [hideRequiredMarker]="true" [floatLabel]="true">
+        <mat-select required>
+          <mat-option value="option">java</mat-option>
+          <mat-option value="option">pom</mat-option>
+          <mat-option value="option">sql</mat-option>
+          <mat-option value="option">yam</mat-option>
+          <mat-option value="option">properties</mat-option>
+          <mat-option value="option">json</mat-option>
+          <mat-option value="option">css</mat-option>
+          <mat-option value="option">txt</mat-option>
+          <mat-option value="option">Sem Extensão</mat-option>
+        </mat-select>
+        <mat-label>
+          <mat-icon>insert_drive_file</mat-icon>
+          <mat-label>Tipo de Arquivo:</mat-label>
+        </mat-label>
+      </mat-form-field>
+
+
+      <p>
+        <mat-form-field class="nome-formatacao" appearance="standard">
+          <mat-label>Entre com nome do Arquivo:</mat-label>
+          <input matInput placeholder="TesteClass.java" [formControl]="nome" required>
+          <mat-error *ngIf="nome.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="nome-formatacao" appearance="standard">
+          <mat-label>Entre com nome do Arquivo:</mat-label>
+          <input matInput placeholder="TesteClass.java" [formControl]="nome" required>
+          <mat-error *ngIf="nome.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="nome-formatacao" appearance="standard">
+          <mat-label>Entre com nome do Arquivo:</mat-label>
+          <input matInput placeholder="TesteClass.java" [formControl]="nome" required>
+          <mat-error *ngIf="nome.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="email-formatacao" appearance="standard">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </p>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Próximo</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Atributos:
+        </mat-panel-title>
+        <mat-panel-description>
+          Informações sobre os atributos do arquiivo:
+          <mat-icon>map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <app-lista-atributo></app-lista-atributo>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+        <button mat-button color="primary" (click)="nextStep()">Próximo</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Metódos:
+        </mat-panel-title>
+        <mat-panel-description>
+          Lista de metódos dos arquivo:
+          <mat-icon>date_range</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <app-lista-metodo></app-lista-metodo>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+        <button mat-button color="primary" (click)="nextStep()">Salvar</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+</div>
