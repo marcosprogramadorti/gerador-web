@@ -4,19 +4,22 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. get">
     </mat-form-field>
 
-    <H2>Lista de Métodos:</H2>
+    <H2>Lista de Imports:</H2>
     <div style="margin-bottom: 20px;">
         <button mat-mini-fab color="accent" mat-mini-fab aria-label="Novo">
             <mat-icon>add</mat-icon>
         </button>
     </div>
+
+
+
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="lista" matSort multiTemplateDataRows class="mat-elevation-z8">
 
             <!-- Position Column -->
-            <ng-container matColumnDef="idMetodo">
+            <ng-container matColumnDef="idImport">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Id:</th>
-                <td mat-cell *matCellDef="let element"> {{element.idMetodo}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.idImport}} </td>
             </ng-container>
             <ng-container matColumnDef="descricao">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição:</th>
