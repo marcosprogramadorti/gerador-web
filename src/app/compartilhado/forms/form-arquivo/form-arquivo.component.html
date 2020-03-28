@@ -83,8 +83,27 @@
         <button mat-button color="primary" (click)="nextStep()">Próximo</button>
       </mat-action-row>
     </mat-expansion-panel>
-
+    
     <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Imports:
+        </mat-panel-title>
+        <mat-panel-description>
+          Lista de imports dos arquivo:
+          <mat-icon>date_range</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <app-lista-import></app-lista-import>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+        <button mat-button color="primary" (click)="nextStep()">Próximo</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
           Metódos:

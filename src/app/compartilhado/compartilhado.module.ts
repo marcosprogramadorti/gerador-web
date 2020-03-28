@@ -18,9 +18,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ListaMetodoComponent } from './listas/lista-metodo/lista-metodo.component';
+import { ListaImportComponent } from './listas/lista-import/lista-import.component';
 
 @NgModule({
-  declarations: [FormArquivoComponent, ListaAtributoComponent, ListaMetodoComponent],
+  declarations: [FormArquivoComponent, ListaAtributoComponent, ListaMetodoComponent, ListaImportComponent],
   imports: [
     CommonModule,
     MatTableModule,
