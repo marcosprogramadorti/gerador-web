@@ -1,4 +1,5 @@
-export interface IMetodo{
-    idMetodo:number;
-	descricao:string;
+import { IDialogavelDescricao } from './IDialogavelDescricao';
+
+export interface IMetodo extends IDialogavelDescricao {
+    idMetodo: number;
 }

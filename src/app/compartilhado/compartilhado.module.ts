@@ -19,9 +19,13 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ListaMetodoComponent } from './listas/lista-metodo/lista-metodo.component';
 import { ListaImportComponent } from './listas/lista-import/lista-import.component';
+import { FormCodeDataComponent } from './forms/form-code-data/form-code-data.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogGenericoComponent } from './dialogos/dialog-generico/dialog-generico.component';
+import { DialogErroComponent } from './dialogos/dialog-erro/dialog-erro.component';
 
 @NgModule({
-  declarations: [FormArquivoComponent, ListaAtributoComponent, ListaMetodoComponent, ListaImportComponent],
+  declarations: [FormArquivoComponent, ListaAtributoComponent, ListaMetodoComponent, ListaImportComponent, FormCodeDataComponent, DialogGenericoComponent, DialogErroComponent],
   imports: [
     CommonModule,
     MatTableModule,
@@ -36,7 +40,8 @@ import { ListaImportComponent } from './listas/lista-import/lista-import.compone
     MatButtonModule,
     MatExpansionModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule
     
 
   ],
