@@ -30,12 +30,10 @@ export class DialogGenericoComponent {
     }
     return true;
   }
-  onNoClick(): void {
+  fecharDialogo(): void {
     this.dialogRef.close();
   }
-  salvar(): void {
-    this.dialogRef.close();
-  }
+
 
 }
 

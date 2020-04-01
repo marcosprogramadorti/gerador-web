@@ -23,6 +23,7 @@ import { FormCodeDataComponent } from './forms/form-code-data/form-code-data.com
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogGenericoComponent } from './dialogos/dialog-generico/dialog-generico.component';
 import { DialogErroComponent } from './dialogos/dialog-erro/dialog-erro.component';
+import { BancoService } from './banco.service';
 
 @NgModule({
   declarations: [FormArquivoComponent, ListaAtributoComponent, ListaMetodoComponent, ListaImportComponent, FormCodeDataComponent, DialogGenericoComponent, DialogErroComponent],
@@ -46,6 +47,7 @@ import { DialogErroComponent } from './dialogos/dialog-erro/dialog-erro.componen
 
   ],
   exports: [],
-  providers: [UtilService],
+  providers: [UtilService, BancoService],
+  
 })
 export class CompartilhadoModule { }
