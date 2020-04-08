@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { IGenericoDados } from './IGenericoDados';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import Swal from 'sweetalert2'
 
 
 @Injectable({
@@ -25,4 +26,31 @@ export class UtilService {
       dados.paginator.firstPage();
     }
   }
+
+  mensagemConfirma(){
+    return MESN;
+  }
+
+  
+
 }
+
+OBJ_MENSAGEM_CONFI = {
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+};
+const MESN = Swal.fire(OBJ_MENSAGEM_CONFI).then((result) => {
+  if (result.value) {
+
+  }
+});
+
+
+
+
+

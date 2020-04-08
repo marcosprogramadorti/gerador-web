@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogGenericoComponent } from './dialogos/dialog-generico/dialog-generico.component';
 import { IFonteDados } from './modelos/IFonteDados';
+import { UtilService } from './util.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BancoService {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public utilService: UtilService) { }
 
   dialogRef: any;
 
@@ -58,6 +59,7 @@ export class BancoService {
     f.selecionado = linha;
   }
   excluir<T>(f: IFonteDados<T>, i: number):void{
+    this.utilService.mostraMensConfirma();
     f.lista.data.splice(i,1);
     f.lista._updateChangeSubscription();
   }
