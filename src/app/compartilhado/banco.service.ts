@@ -59,9 +59,12 @@ export class BancoService {
     f.selecionado = linha;
   }
   excluir<T>(f: IFonteDados<T>, i: number):void{
-    this.utilService.mostraMensConfirma();
-    f.lista.data.splice(i,1);
-    f.lista._updateChangeSubscription();
+    let excluirGenerico = function fn() {
+      f.lista.data.splice(i,1);
+      f.lista._updateChangeSubscription();  
+    }
+
+    this.utilService.mensagemConfirma('Você tem certeza?',excluirGenerico);
   }
 
 }

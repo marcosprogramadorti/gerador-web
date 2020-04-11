@@ -4,6 +4,8 @@ import { IGenericoDados } from './IGenericoDados';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import Swal from 'sweetalert2'
+import { Observable, of } from 'rxjs';
+import { IFonteDados } from './modelos/IFonteDados';
 
 
 @Injectable({
@@ -27,30 +29,24 @@ export class UtilService {
     }
   }
 
-  mensagemConfirma(){
-    return MESN;
+  mensagemConfirma(msg:string, funcaoConfirmada:()=>void ) :any{
+    Swal.fire({
+      title: msg,
+      text: 'Você não poderá reverter isso!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim, apagar isso!',
+      cancelButtonText:'Cancelar'
+    }).then(r=>{
+      if (r.value){
+        funcaoConfirmada();
+      }
+    });
   }
-
-  
 
 }
-
-OBJ_MENSAGEM_CONFI = {
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
-};
-const MESN = Swal.fire(OBJ_MENSAGEM_CONFI).then((result) => {
-  if (result.value) {
-
-  }
-});
-
-
 
 
 
