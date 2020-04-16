@@ -1,24 +1,24 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { IFonteDados } from '../../modelos/IFonteDados';
 import { IMetodo } from '../../modelos/IMetodo';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { UtilService } from '../../util.service';
-import { IFonteDados } from '../../modelos/IFonteDados';
 import { BancoService } from '../../banco.service';
+import { DialogGeraEntidadeComponent } from '../../dialogos/dialog-gera-entidade/dialog-gera-entidade.component';
 import { DialogGenericoComponent } from '../../dialogos/dialog-generico/dialog-generico.component';
 
-
 @Component({
-  selector: 'app-lista-metodo',
-  templateUrl: '../lista-generico.component.html',
-  styleUrls: ['./lista-metodo.component.scss']
+  selector: 'app-lista-gera-entidade',
+  templateUrl: './lista-gera-entidade.component.html',
+  styleUrls: ['./lista-gera-entidade.component.scss']
 })
-export class ListaMetodoComponent implements OnInit {
+export class ListaGeraEntidadeComponent implements OnInit {
 
   f: IFonteDados<IMetodo> = {
     selecionado: {} as IMetodo,
-    lista: new MatTableDataSource(LISTA),
+    lista: new MatTableDataSource(),
     indice: -1
 
   } as IFonteDados<IMetodo>;
@@ -44,7 +44,7 @@ export class ListaMetodoComponent implements OnInit {
   }
 
   abrirDiagolo(): void {
-    this.bancoService.abrirDialogo<IMetodo>(this.f, DialogGenericoComponent);
+    this.bancoService.abrirDialogo<IMetodo>(this.f, DialogGeraEntidadeComponent);
   }
 
   incioEditar(i: any, linha: IMetodo): void {
@@ -57,17 +57,8 @@ export class ListaMetodoComponent implements OnInit {
 
 }
 
-/**
- * MOKUP
- * **/
-const m1: IMetodo = {
-  idMetodo: 1,
-  descricao: 'public Long getIdMetodo() { return idMetodo;	}'
-}
-const m2: IMetodo = {
-  idMetodo: 2,
-  descricao: 'public void setIdMetodo(Long idMetodo) {		this.idMetodo = idMetodo;	}'
-}
-const LISTA: IMetodo[] = [m1, m2];
+
+
+
 
 

@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogGenericoComponent } from './dialogos/dialog-generico/dialog-generico.component';
 import { IFonteDados } from './modelos/IFonteDados';
 import { UtilService } from './util.service';
+import { DialogGeraEntidadeComponent } from './dialogos/dialog-gera-entidade/dialog-gera-entidade.component';
+import { ComponentType } from '@angular/cdk/portal';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +15,15 @@ export class BancoService {
 
   dialogRef: any;
 
-  abrirDialogo<T>(f: IFonteDados<T>): void {
+  abrirDialogo<T>(f: IFonteDados<T>, componentOrTemplateRef: any): void {
 
-    const dialogRef = this.dialog.open(DialogGenericoComponent, {
+
+    const dialogRef = this.dialog.open(componentOrTemplateRef, {
       width: '650px',
-      height: '450px',
+      height: '510px',
       data: f.selecionado
     });
+
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
@@ -58,13 +62,13 @@ export class BancoService {
     f.indice = i;
     f.selecionado = linha;
   }
-  excluir<T>(f: IFonteDados<T>, i: number):void{
+  excluir<T>(f: IFonteDados<T>, i: number): void {
     let excluirGenerico = function fn() {
-      f.lista.data.splice(i,1);
-      f.lista._updateChangeSubscription();  
+      f.lista.data.splice(i, 1);
+      f.lista._updateChangeSubscription();
     }
 
-    this.utilService.mensagemConfirma('Você tem certeza?',excluirGenerico);
+    this.utilService.mensagemConfirma('Você tem certeza?', excluirGenerico);
   }
 
 }

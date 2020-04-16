@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Novo</h1>
+<div mat-dialog-content>
+  <p>Descreva a fonte da entidade</p>
+  <mat-form-field appearance="standard" [hideRequiredMarker]="true" [floatLabel]="true">
+    <mat-select required>
+      <mat-option value="option">Code Data</mat-option>
+      <mat-option value="option">JSon</mat-option>
+      <mat-option value="option">Modelo Angular</mat-option>
+      <mat-option value="option">Script SQL</mat-option>
+      <mat-option value="option">Conexão</mat-option>
+    </mat-select>
+    <mat-label>
+      <mat-icon>insert_drive_file</mat-icon>
+      <mat-label>Tipo de Arquivo:</mat-label>
+    </mat-label>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="campo-descr">
+    <mat-label>{{rotulo}}</mat-label>
+    <textarea matInput [(ngModel)]="data.descricao" required></textarea>
+    <mat-error *ngIf="!validaCampo()">campo obrigado</mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [disabled]="false" (click)="fecharDialogo()">Não obrigado</button>
+  <button mat-button color="accent" [disabled]="!validaCampo()" [mat-dialog-close]="true" cdkFocusInitial>
+    <mat-icon>add</mat-icon>Incluir
+  </button>
+</div>

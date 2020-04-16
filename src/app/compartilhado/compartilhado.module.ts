@@ -24,9 +24,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogGenericoComponent } from './dialogos/dialog-generico/dialog-generico.component';
 import { DialogErroComponent } from './dialogos/dialog-erro/dialog-erro.component';
 import { BancoService } from './banco.service';
+import { FormGeraEntidadeComponent } from './forms/form-gera-entidade/form-gera-entidade.component';
+import { ListaGeraEntidadeComponent } from './listas/lista-gera-entidade/lista-gera-entidade.component';
+import { DialogGeraEntidadeComponent } from './dialogos/dialog-gera-entidade/dialog-gera-entidade.component';
 
 @NgModule({
-  declarations: [FormArquivoComponent, ListaAtributoComponent, ListaMetodoComponent, ListaImportComponent, FormCodeDataComponent, DialogGenericoComponent, DialogErroComponent],
+  declarations: [FormArquivoComponent, ListaAtributoComponent, ListaMetodoComponent, ListaImportComponent, FormCodeDataComponent, DialogGenericoComponent, DialogErroComponent, FormGeraEntidadeComponent, ListaGeraEntidadeComponent, DialogGeraEntidadeComponent],
   imports: [
     CommonModule,
     MatTableModule,

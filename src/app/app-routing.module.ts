@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListaProjetoComponent } from './projeto/lista-projeto/lista-projeto.component';
 import { FormArquivoComponent } from './compartilhado/forms/form-arquivo/form-arquivo.component';
 import { FormCodeDataComponent } from './compartilhado/forms/form-code-data/form-code-data.component';
+import { FormGeraEntidadeComponent } from './compartilhado/forms/form-gera-entidade/form-gera-entidade.component';
 
 
 const routes: Routes = [{
@@ -10,6 +11,9 @@ const routes: Routes = [{
 },
 {
   path: 'formArquivo', component: FormArquivoComponent,
+},
+{
+  path: 'formGeraEntidade', component: FormGeraEntidadeComponent,
 },
 {
   path: 'form', component: FormCodeDataComponent,
