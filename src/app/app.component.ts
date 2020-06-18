@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gerador-web';
-  tituloBarraTopo = 'Gerador de API Java';
+  tituloBarraTopo = 'Gerador de API';
 }

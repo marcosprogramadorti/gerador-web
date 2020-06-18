@@ -9,11 +9,13 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CompartilhadoModule } from './compartilhado/compartilhado.module';
 import { TesteComponent } from './teste/teste.component';
+import { SsoComponent } from './sso/sso.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TesteComponent
+    TesteComponent,
+    SsoComponent
   ],
   imports: [
 

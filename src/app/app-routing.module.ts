@@ -4,6 +4,7 @@ import { ListaProjetoComponent } from './projeto/lista-projeto/lista-projeto.com
 import { FormArquivoComponent } from './compartilhado/forms/form-arquivo/form-arquivo.component';
 import { FormCodeDataComponent } from './compartilhado/forms/form-code-data/form-code-data.component';
 import { FormGeraEntidadeComponent } from './compartilhado/forms/form-gera-entidade/form-gera-entidade.component';
+import { SsoComponent } from './sso/sso.component';
 
 
 const routes: Routes = [{
@@ -17,6 +18,9 @@ const routes: Routes = [{
 },
 {
   path: 'form', component: FormCodeDataComponent,
+},
+{
+  path: 'sso', component: SsoComponent,
 }];
 
 @NgModule({
