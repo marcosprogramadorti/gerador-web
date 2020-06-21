@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
+  production: false,
   envName: 'local',
   keycloak: {
     // Url of the Identity Provider
@@ -14,7 +14,7 @@ export const environment = {
 
     // The SPA's id. 
     // The SPA is registerd with this id at the auth-serverß
-    clientId: 'gerador-prod',
+    clientId: 'gerador',
 
     responseType: 'code',
     // set the scope for the permissions the client should request
