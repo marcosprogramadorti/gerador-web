@@ -21,10 +21,12 @@ const routes: Routes = [{
 },
 {
   path: 'sso', component: SsoComponent,
-},
-{
-  path: '**', redirectTo: 'sso',
-}];
+}
+// ,
+// {
+//   path: '**', redirectTo: 'sso',
+// }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

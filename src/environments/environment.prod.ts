@@ -24,5 +24,6 @@ export const environment = {
     // at_hash is not present in JWT token
     showDebugInformation: true,
     disableAtHashCheck: true
+    
   }
 };

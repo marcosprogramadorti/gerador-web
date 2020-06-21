@@ -25,6 +25,7 @@ export const authConfig: AuthConfig = {
     // at_hash is not present in JWT token
     showDebugInformation: environment.keycloak.showDebugInformation,
     disableAtHashCheck: environment.keycloak.disableAtHashCheck
+    
 };
 
 

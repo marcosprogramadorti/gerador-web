@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
+import { log } from 'util';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-sso',
@@ -16,7 +18,7 @@ export class SsoComponent implements OnInit {
   }
   
   logout() {
-    this.oAuthService.logOut(true);
+    this.oAuthService.logOut();
   }
 
 }
