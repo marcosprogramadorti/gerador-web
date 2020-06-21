@@ -21,6 +21,9 @@ const routes: Routes = [{
 },
 {
   path: 'sso', component: SsoComponent,
+},
+{
+  path: '**', redirectTo: 'sso',
 }];
 
 @NgModule({

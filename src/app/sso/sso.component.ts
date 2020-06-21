@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-sso',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SsoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private oAuthService:OAuthService) {
+  
+   }
 
   ngOnInit(): void {
+  }
+  
+  logout() {
+    this.oAuthService.logOut(true);
   }
 
 }

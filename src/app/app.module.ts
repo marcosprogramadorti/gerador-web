@@ -1,15 +1,16 @@
-import { ProjetoModule } from './projeto/projeto.module';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AuthConfigModule } from './auth.config.module';
 import { CompartilhadoModule } from './compartilhado/compartilhado.module';
-import { TesteComponent } from './teste/teste.component';
+import { ProjetoModule } from './projeto/projeto.module';
 import { SsoComponent } from './sso/sso.component';
+import { TesteComponent } from './teste/teste.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +28,11 @@ import { SsoComponent } from './sso/sso.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatToolbarModule
+    MatToolbarModule,
+    
+    //SSO
+    AuthConfigModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
