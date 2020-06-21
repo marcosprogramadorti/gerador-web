@@ -6,11 +6,11 @@ export const environment = {
     issuer: 'https://app-sso-keycloak.herokuapp.com/auth/realms/clientes',
 
     // URL of the SPA to redirect the user to after login
-    redirectUri: 'http://localhost:4200/',
+    redirectUri: 'https://gerador-web.herokuapp.com/',
 
     // The SPA's id. 
     // The SPA is registerd with this id at the auth-serverß
-    clientId: 'gerador',
+    clientId: 'gerador-prod',
 
     responseType: 'code',
     // set the scope for the permissions the client should request
